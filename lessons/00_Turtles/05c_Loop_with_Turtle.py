@@ -20,5 +20,4 @@ for i in range(5):
     tina.pendown()
     tina.forward(60)
     tina.penup()
-    tina.left(72) 
- # Your code here
+    tina.left(72) # Your code here

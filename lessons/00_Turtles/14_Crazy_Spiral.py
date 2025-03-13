@@ -5,10 +5,15 @@ Make your own crazy spiral with a pattern like
 in 14_FLaming_Ninja_Star.py, but use what you've learned about loops
 """
 
-... # Copy code to make a turtle and set up the window
+import turtle as turtle
 
-t = ... # Create a turtle named t
+turtle.setup(width=600, height=600)
 
+# Copy code to make a turtle and set up the window
+
+t = turtle.Turtle()
+
+t.shape("turtle")  # Create a turtle named t
 
 
 # 1) Complete make_a_shape() to make the turtle move in some pattern. 
@@ -17,7 +22,11 @@ t = ... # Create a turtle named t
 
 def make_a_shape(t):
     """Make a shape with turtle t. Make it go left or right or forward"""    
-    ...
+for i in (...):
+    t.forward(100)
+    t.left(90)
+    t.end_fill()
+
 
 # 2) Call make_a_shape() in a loop to make the turtle draw a spiral.
 # For instance, you can call make_a_shape() 100 times to make a spiral with 100 shapes.
