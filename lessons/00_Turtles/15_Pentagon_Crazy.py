@@ -34,7 +34,7 @@ for i in range(360):
         myTurtle.width(3)
     myTurtle.pencolor(getNextColor(i))
     myTurtle.forward(i)
-    myTurtle.right(angle + 1)
+    myTurtle.right(angle + 5)
 
 myTurtle.hideturtle()
 
