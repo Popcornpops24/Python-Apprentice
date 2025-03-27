@@ -9,17 +9,17 @@ at the comments and the code snippets in the previous lessons, like
 
 """
 
-# Import the required modules
+from tkinter import messagebox, simpledialog, Tk # Import the required modules
 
-# Create a window object
+window = Tk() # Create a window object
 
-# Hide the window, hint: use the withdraw method
+window.withdraw() # Hide the window, hint: use the withdraw method
 
-# Ask the user for the first number   
+number1 = simpledialog.askinteger("Two Numbers", "Give me a number") # Ask the user for the first number   
 
-# Ask the user for the second number
+number2 = simpledialog.askinteger("Two Numbers", "Give me another number") # Ask the user for the second number
 
-# Display the sum of the two numbers 
+print(number1 + number2) # Display the sum of the two numbers 
 
-# Keep the window open
+window.mainloop() # Keep the window open
 
