@@ -5,6 +5,34 @@ X_MARK = "X"
 O_MARK = "O"
 
 # Implement check_row() and check_win() to allow the game to check if a player has won
+def check_row(l):
+    if l[0] is not None and l[0] == l[1] == l[2]:
+        return l[0]
+    
+    return None
+
+def check_win(board):
+
+    for row in board:
+        winner = check_row(row)
+        if winner:
+            return winner
+
+    for col in range(3):
+        column = [board[row][col] for row in range(3)]
+        winner = check_row(column)
+        if winner:
+            return winner
+
+    diag1 = [board[i][i] for i in range(3)]
+    diag2 = [board[i][2 - i] for i in range(3)]
+
+    for diag in (diag1, diag2):
+        winner = check_row(diag)
+        if winner:
+            return winner
+        
+        return None
 # IMPORTANT! In your code, you should use the constants X_MARK and O_MARK instead of the strings "x" and "o"
 
 def check_row(l):
