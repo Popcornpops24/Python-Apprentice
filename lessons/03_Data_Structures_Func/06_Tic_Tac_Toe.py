@@ -32,29 +32,6 @@ def check_win(board):
         if winner:
             return winner
         
-        return None
-# IMPORTANT! In your code, you should use the constants X_MARK and O_MARK instead of the strings "x" and "o"
-
-def check_row(l):
-    """Check if a player won on a row
-    Args:
-        l: a 3 element iterable
-        
-    Returns:
-        The winner's token ( x or o ) if there is one, otherwise None
-        """
-
-    return None
-
-def check_win(board):
-    """Check if a player has won on a board
-    Args:
-        board: a 3x3 2D array
-    
-    Returns:
-        The winner's token ( x or o ) if there is one, otherwise None
-    """
-
     return None
 
 # The following code is the main part of the program. It creates a GUI for the
@@ -62,7 +39,6 @@ def check_win(board):
 # after your program is working you can try chaning the code below. 
 
 class TicTacToe:
-    """A Simple Tic Tac Toe game"""
 
     app = None
     board = None # The storage for user's markers
@@ -88,7 +64,6 @@ class TicTacToe:
         self.reset()
 
     def reset(self):
-        """Reset the game state"""
         self.turn_n = 0
         self.turn = X_MARK
         self.message.value = "It's your turn, " + self.current_turn
@@ -102,16 +77,13 @@ class TicTacToe:
                 self.buttons[x][y] = PushButton(self.board_pane, text='', grid=[x, y], width=3, command=self.do_turn, args=[x,y])
 
     def start(self):
-        """Start the game"""
         self.app.display()
 
     @property
     def current_turn(self):
-        """Return the current player's marker, based on the current turn number"""
         return [X_MARK, O_MARK][self.turn_n % 2]
 
     def do_turn(self, x, y):
-        """Handle one player turn, and return a marker if one of the players won"""
         self.board[x][y] = self.current_turn
         self.buttons[x][y].text = self.current_turn
         self.buttons[x][y].disable()
